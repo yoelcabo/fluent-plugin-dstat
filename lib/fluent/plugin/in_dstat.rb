@@ -121,7 +121,7 @@ module Fluent
           values = line.split(',')
           data = Hash.new { |hash,key| hash[key] = Hash.new {} }
           values.each_with_index do |v, index|
-            data[@first_keys[index]][@second_keys[index]] = v
+            data[@first_keys[index]][@second_keys[index]] = v.to_f
           end
           record = {
             'hostname' => @hostname,
